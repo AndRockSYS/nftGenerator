@@ -1,7 +1,9 @@
 const fs = require('fs');
 const scalePixelArt = require("scale-pixel-art");
 
-module.exports = (amount) => {
+let amount = 30;
+
+function convert() {
     for(let i = 1; i <= amount; i++) {
     const inputBuffer = fs.readFileSync(`./generated/${i}.png`);
     scalePixelArt(inputBuffer, 10).then((data) => {
@@ -9,3 +11,5 @@ module.exports = (amount) => {
     });
   }
 }
+
+convert();
