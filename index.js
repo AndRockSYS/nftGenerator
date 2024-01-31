@@ -6,10 +6,10 @@ let imageWidth = 64;
 let collectionAmount = 30;
 let convertPixel = true;
 
-function main() {
-    generateVariations();
-    generateAll(imageWidth);
-    
+async function main() {
+    generateVariations(collectionAmount);
+    await generateAll(imageWidth);
+
     if(convertPixel)
         convertPixelImg(collectionAmount)
 }

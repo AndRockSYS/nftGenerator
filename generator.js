@@ -5,7 +5,7 @@ const config = require('./config');
 const attributes = require('./attributes');
 
 async function generateImagesAndMetadata(width) {
-  const props = JSON.parse(fs.readFileSync(`${config.outputFolder}/layersVariations.json}`));
+  const props = JSON.parse(fs.readFileSync(`${config.outputFolder}/layersVariations.json`));
   for (let i = 0; i < props.length; i++) {
     await generateImages(props[i], i+1, width);
     if(config.uri)
